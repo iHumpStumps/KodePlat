@@ -15,3 +15,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/' , 'HomeController@index'); 
 Route::post('login', [UserController::class, 'login']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
