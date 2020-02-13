@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('view');
-});
+use App\Http\Controllers\UserController;
+
+Route::get('/' , 'HomeController@index'); 
+Route::post('login', [UserController::class, 'login']);
