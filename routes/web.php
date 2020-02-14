@@ -11,17 +11,15 @@
 |
 */
 
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 
 Route::get('/' , function(){ 
-        return view('home', [
-            'title' => 'Ahlsell',
-            'information' => 'information bla bla',
-            'address' => 'mölndal',
-            'year' => '2019',
-        ]);
+        return view('home');
 }); 
 
-Route::post('login', [UserController::class, 'login']);
+Route::resource('/project', 'ProjectController');
+
+Route::post('login', [UserController::class, 'login']); 
 
 Auth::routes();
