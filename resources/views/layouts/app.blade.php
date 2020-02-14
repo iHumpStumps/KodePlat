@@ -11,30 +11,33 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
-    <!-- include Header layout -->
-    @include('layouts.header')
+    <div id="app">
+        <!-- include Header layout -->
+        @include('layouts.header')
 
-    <!-- container for displaying dynamic content -->
-    <div class="main-content">
-        <div class="container-xl">
-            @yield('content')
+        <!-- container for displaying dynamic content -->
+
+        <div class="main-content">
+            <div class="container-xl">
+                @yield('content')
+            </div>
         </div>
+        <!-- include Footer layout -->
+        @include('layouts.footer')
     </div>
-    <!-- include Footer layout -->
-    @include('layouts.footer')
-    <!-- Bootstrap JavaScript -->
-    <script src="/js/app.js"></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 
 </html>
