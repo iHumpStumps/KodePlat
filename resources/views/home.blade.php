@@ -1,23 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-xl">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+<div class="card-group">
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-information">{{information}}</p>
     </div>
+    {{-- <img src="..." class="card-img-bottom" alt="..."> --}}
+    <div class="card-footer">
+      <small class="text-muted">{{address}}, {{year}}</small>
+    </div>
+  </div>
 </div>
+
 @endsection

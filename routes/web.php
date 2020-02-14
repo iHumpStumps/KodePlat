@@ -13,9 +13,15 @@
 
 use App\Http\Controllers\UserController;
 
-Route::get('/' , 'HomeController@index'); 
+Route::get('/' , function(){ 
+        return view('home', [
+            'title' => 'Ahlsell',
+            'information' => 'information bla bla',
+            'address' => 'mölndal',
+            'year' => '2019',
+        ]);
+}); 
+
 Route::post('login', [UserController::class, 'login']);
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
