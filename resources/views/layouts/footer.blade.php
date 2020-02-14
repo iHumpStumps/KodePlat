@@ -12,8 +12,8 @@
         <div>
             <a href="#" class="text-light">Column three</a>
             <br>
-            <a href="#" class="text-light">Login</a><br>
-            <a href="#" class="text-light">{{ __('footer.register') }}</a><br>
+            <a href="/login" class="text-light">Login</a><br>
+            <a href="/register" class="text-light">{{ __('footer.register') }}</a><br>
         </div>
         <div>
             (Icons)
