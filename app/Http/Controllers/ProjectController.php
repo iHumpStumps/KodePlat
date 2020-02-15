@@ -14,12 +14,14 @@ class ProjectController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+//        $this->authorizeResource(Project::class, 'projects');
     }
 
     public function index()
     {
-        return view('project');
+        $projects = Project::all();
+        return view('project.index', ['projects' => $projects]);
     }
 
     public function create()
@@ -38,15 +40,11 @@ class ProjectController extends Controller
 
         return redirect()->route('projects.index');
 
-//        $project->title = $request->get('title');
-//        $project->information = $request->get('information');
-//        $project->metal = $request->get('metal');
-//        $project->buyer = $request->get('buyer');
-//        $project->address = $request->get('address');
-//        $project->year = $request->get('year');
-//
-//        $project->save();
-
-//        return redirect(action([ProjectController::class, 'index']));
     }
+
+    public function show(Project $project)
+    {
+        return view('project.show', compact('project'));
+    }
+
 }

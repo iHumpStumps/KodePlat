@@ -4,19 +4,35 @@
             (Icons)
         </div>
         <div>
-            <a href="#" class="text-light">Column one</a>
+            <a
+                href="#"
+                class="text-light"
+            >Column one</a>
         </div>
         <div>
-            <a href="#" class="text-light">Column two</a>
+            <a
+                href="#"
+                class="text-light"
+            >Column two</a>
         </div>
         <div>
-            <a href="#" class="text-light">Column three</a>
+            <a
+                href="#"
+                class="text-light"
+            >Column three</a>
             <br>
-            <a href="/login" class="text-light">Login</a><br>
-            <a href="/register" class="text-light">{{ __('footer.register') }}</a><br>
         </div>
         <div>
-            (Icons)
+            @guest
+                <a
+                    href="/login"
+                    class="text-light"
+                >{{ __('mytranslation.login') }}</a> |
+                <a
+                    href="/register"
+                    class="text-light"
+                >{{ __('mytranslation.register') }}</a><br>
+            @endguest
         </div>
     </div>
 </div>

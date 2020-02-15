@@ -2,9 +2,9 @@
     <div class="container">
         <a
             class="navbar-brand"
-            href="{{ url('/') }}"
+            href="{{ route('home') }}"
         >
-            {{ config('app.name', 'Laravel') }}
+            {{ __('mytranslation.kodeplat') }}
         </a>
         <button
             class="navbar-toggler"
@@ -24,27 +24,24 @@
         >
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-
+                <li class="nav-item">
+                    <a
+                        class="nav-link font-weight-bold"
+                        href="{{ route('home') }}"
+                    >{{ __('mytranslation.home') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link font-weight-bold"
+                        href="{{ route('projects.index') }}"
+                    >{{ __('mytranslation.project') }}</a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item">
-                        <a
-                            class="nav-link"
-                            href="{{ route('login') }}"
-                        >{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="{{ route('register') }}"
-                            >{{ __('Register') }}</a>
-                        </li>
-                    @endif
                 @else
                     <li class="nav-item dropdown">
                         <a
@@ -68,7 +65,7 @@
                                 class="dropdown-item"
                                 href="{{ action([\App\Http\Controllers\ProjectController::class, 'create']) }}"
                             >
-                                {{ __('Create project') }}
+                                {{ __('mytranslation.create_project') }}
                             </a>
 
                             <a
@@ -78,7 +75,7 @@
                                 event.preventDefault();
                                 document.getElementById('logout-form').submit();"
                             >
-                                {{ __('Logout') }}
+                                {{ __('mytranslation.logout') }}
                             </a>
 
 

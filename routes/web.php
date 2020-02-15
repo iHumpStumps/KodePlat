@@ -11,12 +11,11 @@
 |
 */
 
-use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::resource('/projects', 'ProjectController');
 

@@ -14,9 +14,9 @@ return [
     */
 
     'reset' => 'Ditt lösenord har nu återställts!',
-    'sent' => 'Vi har skickat ett email till dig med en återställnings-länk.',
+    'sent' => 'Vi har skickat en återställnings-länk till din e-post address.',
     'throttled' => 'Vänta lite innan du försöker igen.',
     'token' => 'This password reset token is invalid.',
-    'user' => "Det finns ingen användare med den e-mail addressen.",
+    'user' => 'Det finns ingen användare med den e-post addressen.',
 
 ];

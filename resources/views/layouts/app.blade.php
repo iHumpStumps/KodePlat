@@ -14,7 +14,7 @@
         content="{{ csrf_token() }}"
     >
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Kode Plåt AB</title>
 
     <!-- Fonts -->
     <link
@@ -36,7 +36,7 @@
 <!-- container for displaying dynamic content -->
 
     <div class="main-content">
-        <div class="container-xl">
+        <div class="container-xl py-3">
             @yield('content')
         </div>
     </div>

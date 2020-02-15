@@ -15,5 +15,5 @@ return [
 
     'failed' => 'Den information du har angett stämmer inte.',
     'throttle' => 'För många försök. Försök igen om :seconds sekunder.',
-
+    'forgot_password' => 'Har du glömt ditt lösenord?',
 ];
