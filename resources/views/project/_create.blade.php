@@ -78,25 +78,26 @@
                     />
                 </div>
 
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input
+                            type="file"
+                            class="custom-file-input"
+                            id="myInput"
+                            aria-describedby="myInput"
+                            onchange="$(this).next().after().text($(this).val().split('\\').slice(-1)[0])"
+                        >
+                        <label
+                            class="custom-file-label"
+                            for="myInput"
+                        >Choose file</label>
+                    </div>
+                </div>
                 <div>
-                    <input
-                        type="button"
-                        class="btn btn-secondary"
-                        id="uploadImage"
-                        value="{{ __('mytranslation.upload') }}"
-                        onclick="document.getElementById('file').click();"
-                    />
-                    <input
-                        type="file"
-                        style="display:none;"
-                        id="file"
-                        name="file"
-                    />
-
                     <button
                         type="submit"
-                        class="btn btn-primary float-right"
-                    >Ladda upp!
+                        class="btn btn-primary"
+                    >{{ __('mytranslation.upload') }}
                     </button>
                 </div>
             </form>
