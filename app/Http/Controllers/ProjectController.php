@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Project;
 use App\Http\Requests\ProjectRequest;
 
@@ -35,7 +36,20 @@ class ProjectController extends Controller
 
     public function update(ProjectRequest $request, Project $project)
     {
-        $project->fill($request->validated())->save();
+        $filePath = $request->file('filename')->store('images');
+
+        $projectAttributes = [
+            'title' => $request->get('title'),
+            'information' => $request->get('information'),
+            'metal' => $request->get('metal'),
+            'buyer' => $request->get('buyer'),
+            'address' => $request->get('address'),
+            'year' => $request->get('year'),
+        ];
+
+        $project->fill($projectAttributes)->save();
+
+        $project->images()->save(new Image(['filepath' => $filePath]));
 
         return redirect()->route('projects.index');
 

@@ -30,6 +30,7 @@ class ProjectRequest extends FormRequest
             'buyer' => 'required|string',
             'address' => 'required|string',
             'year' => 'required|digits:4|integer|min:1901|max:2155',
+            'filename' => 'required',
         ];
     }
 }

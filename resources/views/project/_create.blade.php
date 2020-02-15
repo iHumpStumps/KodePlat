@@ -7,6 +7,7 @@
             <form
                 method="POST"
                 action="{{ action([\App\Http\Controllers\ProjectController::class, 'store'])  }}"
+                enctype="multipart/form-data"
             >
                 @csrf
                 <div
@@ -82,6 +83,7 @@
                         <input
                             type="file"
                             class="custom-file-input"
+                            name="filename"
                             id="myInput"
                             aria-describedby="myInput"
                             onchange="$(this).next().after().text($(this).val().split('\\').slice(-1)[0])"
