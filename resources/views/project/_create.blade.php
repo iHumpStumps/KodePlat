@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    {{--    <div style="width: 50%; min-width: 300px;">--}}
     <div class="d-flex justify-content-center container">
 
         <div class="row">
@@ -27,11 +26,11 @@
                     <label for="information">
                         Information:
                     </label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        name="information"
-                    />
+                    <textarea
+                        class="form-control rounded-0"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                    ></textarea>
                 </div>
 
                 <div class="form-group">
@@ -90,14 +89,14 @@
                         <label
                             class="custom-file-label"
                             for="myInput"
-                        >Choose file</label>
+                        >{{ __('mytranslation.upload') }}</label>
                     </div>
                 </div>
-                <div>
+                <div><br>
                     <button
                         type="submit"
-                        class="btn btn-primary"
-                    >{{ __('mytranslation.upload') }}
+                        class="btn btn-secondary w-100"
+                    >{{ __('mytranslation.create_project') }}
                     </button>
                 </div>
             </form>

@@ -30,12 +30,35 @@
                         href="{{ route('home') }}"
                     >{{ __('mytranslation.home') }}</a>
                 </li>
+
                 <li class="nav-item">
                     <a
                         class="nav-link font-weight-bold"
                         href="{{ route('projects.index') }}"
                     >{{ __('mytranslation.project') }}</a>
                 </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link font-weight-bold"
+                        href="{{ route('about') }}"
+                    >{{ __('mytranslation.about') }}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link font-weight-bold"
+                        href="{{ route('service') }}"
+                    >{{ __('mytranslation.service') }}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link font-weight-bold"
+                        href="{{ route('contact') }}"
+                    >{{ __('mytranslation.contact') }}</a>
+                </li>
+
             </ul>
 
             <!-- Right Side Of Navbar -->

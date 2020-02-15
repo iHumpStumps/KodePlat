@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="card-deck">
     @foreach($projects as $project)
         <div
             class="card"
@@ -23,4 +24,5 @@
             </div>
         </div>
     @endforeach
+    </div>
 @endsection
