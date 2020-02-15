@@ -31,6 +31,7 @@
                         class="form-control rounded-0"
                         id="exampleFormControlTextarea1"
                         rows="3"
+                        name="information"
                     ></textarea>
                 </div>
 
