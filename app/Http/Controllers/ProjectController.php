@@ -3,32 +3,50 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProjectRequest;
 
 class ProjectController extends Controller
 {
-    public function index(){
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index()
+    {
         return view('project');
     }
 
-    public function create(){
+    public function create()
+    {
         return view('project._create');
     }
 
-    public function store(Request $request){
+    public function store(ProjectRequest $request)
+    {
         return $this->update($request, new Project());
     }
 
-    public function update(Request $request, Project $project){
-        $project->title = $request->get('title');
-        $project->information = $request->get('information');
-        $project->metal = $request->get('metal');
-        $project->buyer = $request->get('buyer');
-        $project->address = $request->get('address');
-        $project->year = $request->get('year');
+    public function update(ProjectRequest $request, Project $project)
+    {
+        $project->fill($request->validated())->save();
 
-        $project->save();
+        return redirect()->route('projects.index');
 
-        return redirect('/project');
+//        $project->title = $request->get('title');
+//        $project->information = $request->get('information');
+//        $project->metal = $request->get('metal');
+//        $project->buyer = $request->get('buyer');
+//        $project->address = $request->get('address');
+//        $project->year = $request->get('year');
+//
+//        $project->save();
+
+//        return redirect(action([ProjectController::class, 'index']));
     }
 }

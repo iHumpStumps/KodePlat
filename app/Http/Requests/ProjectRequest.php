@@ -29,7 +29,7 @@ class ProjectRequest extends FormRequest
             'metal' => 'required|string|nullable',
             'buyer' => 'required|string',
             'address' => 'required|string',
-            'year' => 'required|string',
+            'year' => 'required|digits:4|integer|min:1901|max:2155',
         ];
     }
 }

@@ -14,12 +14,12 @@
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 
-Route::get('/' , function(){ 
-        return view('home');
-}); 
+Route::get('/', function () {
+    return view('home');
+});
 
-Route::resource('/project', 'ProjectController');
+Route::resource('/projects', 'ProjectController');
 
-Route::post('login', [UserController::class, 'login']); 
+Route::post('login', [UserController::class, 'login']);
 
 Auth::routes();
