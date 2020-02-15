@@ -36,7 +36,7 @@ class ProjectController extends Controller
 
     public function update(ProjectRequest $request, Project $project)
     {
-        $filePath = $request->file('filename')->store('images');
+        $filePath = $request->file('filename')->store('public');
 
         $projectAttributes = [
             'title' => $request->get('title'),

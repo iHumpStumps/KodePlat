@@ -4,7 +4,8 @@
             class="navbar-brand"
             href="{{ route('home') }}"
         >
-            {{ __('mytranslation.kodeplat') }}
+{{--            {{ __('mytranslation.kodeplat') }}--}}
+            <img src="{{ asset('storage/o5X75FcPKNleaNEtFZX4Dc5jm7r3bPF6rVIV2OOB.jpeg') }}" >
         </a>
         <button
             class="navbar-toggler"
