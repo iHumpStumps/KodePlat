@@ -15,7 +15,6 @@ class ProjectController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
-//        $this->authorizeResource(Project::class, 'projects');
     }
 
     public function index()
