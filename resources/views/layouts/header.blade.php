@@ -5,7 +5,7 @@
             href="{{ route('home') }}"
         >
 {{--            {{ __('mytranslation.kodeplat') }}--}}
-            {{ asset('storage/images/kode_plat_logo.png') }}
+            <img src="{{ asset('storage/o5X75FcPKNleaNEtFZX4Dc5jm7r3bPF6rVIV2OOB.jpeg') }}" >
         </a>
         <button
             class="navbar-toggler"
