@@ -20,8 +20,12 @@ class ProjectController extends Controller
 
     public function index()
     {
+        $images = [];
         $projects = Project::all();
-        return view('project.index', ['projects' => $projects]);
+        foreach ($projects as $project){
+            $images = array_merge($images, ['image' . $project->id => $project->images->firstWhere('project_id', $project->id)->filepath]);
+        }
+        return view('project.index', ['projects' => $projects, 'images' => $images]);
     }
 
     public function create()
@@ -49,7 +53,9 @@ class ProjectController extends Controller
 
         $project->fill($projectAttributes)->save();
 
-        $project->images()->save(new Image(['filepath' => $filePath]));
+        $fixedFilePath = explode('/', $filePath);
+
+        $project->images()->save(new Image(['filepath' => $fixedFilePath[1]]));
 
         return redirect()->route('projects.index');
 
