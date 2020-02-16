@@ -2,8 +2,22 @@
     class="w-100 text-light"
     style="background-color: #0071B8"
 >
-    <div class="container-xl d-flex justify-content-between">
-
+    <div class="container-xl  d-flex justify-content-center align-items-center"
+    style="transform: translateX(-15px)">
+{{--        <div--}}
+{{--            class="my-2"--}}
+{{--        >--}}
+{{--            <a--}}
+{{--                href="https://www.sbmk.se/"--}}
+{{--                target="_blank"--}}
+{{--                class="text-light"--}}
+{{--            >--}}
+{{--                <img--}}
+{{--                    src="{{ asset('storage/badminton.png') }}"--}}
+{{--                    alt="Skälderviken Badminton"--}}
+{{--                />--}}
+{{--            </a>--}}
+{{--        </div>--}}
         <div class="my-2">
             <a
                 href="https://www.barncancerfonden.se/"
@@ -16,43 +30,23 @@
                 >
             </a>
         </div>
-
-
-        <div
-            class="my-2"
-            style="display:inline-block; justify-content: center; align-items: center"
-        >
-            <a
-                href="https://www.sbmk.se/"
-                target="_blank"
-                class="text-light"
-            ><img
-                    src="{{ asset('storage/badminton.png') }}"
-                    alt="Skälderviken Badminton"
-                />
-                <p>{{ __('mytranslation.badminton_information1') }}<br>
-                    {{ __('mytranslation.badminton_information2') }}</p>
-            </a>
-        </div>
-
-
-        <div class="my-2">
-            <a
-                href="https://www.laget.se/KIS_BANDY_DAMER"
-                target="_blank"
-                class="text-light"
-            ><img
-                    src="{{ asset('storage/kareby_is_slas.png') }}"
-                    alt="Kareby IS damlag"
-                /></a>
-        </div>
+{{--        <div class="my-2">--}}
+{{--            <a--}}
+{{--                href="https://www.laget.se/KIS_BANDY_DAMER"--}}
+{{--                target="_blank"--}}
+{{--                class="text-light"--}}
+{{--            ><img--}}
+{{--                    src="{{ asset('storage/kareby_is_slas.png') }}"--}}
+{{--                    alt="Kareby IS damlag"--}}
+{{--                /></a>--}}
+{{--        </div>--}}
     </div>
 </div>
 <div
     class="w-100 text-light"
     style="background-color: #3A3A3A"
 >
-    <div class="container-xl d-flex justify-content-between">
+    <div class="container-xl d-flex justify-content-between align-items-center">
         <div class="col-1 my-1">
             <a>
                 <img
@@ -91,9 +85,7 @@
                 <span style="color: #ffffff">
                 {{ __('mytranslation.email') }}
                 </span>
-            </a>
-        </div>
-        <div class="my-2">
+            </a><br>
             @guest
                 <a
                     href="/login"
@@ -104,6 +96,17 @@
                     class="text-white"
                 >{{ __('mytranslation.register') }}</a><br>
             @endguest
+        </div>
+        <div class="col-1 my-1">
+            <a>
+                <img
+                    class="my-2"
+                    src="{{ asset('storage/incert.png') }}"
+                    alt="incert"
+                    width="140"
+                    height="136"
+                />
+            </a>
         </div>
     </div>
 </div>

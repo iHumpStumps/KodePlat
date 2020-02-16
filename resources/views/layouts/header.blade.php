@@ -1,11 +1,18 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="height: 95px;">
+<nav class="navbar navbar-light">
     <div class="container">
         <a
-            class="navbar-brand pt-4"
+            class="navbar-brand pt-2"
             href="{{ route('home') }}"
         >
-            <img src="{{ asset('storage/kode_plat_logo.png') }}" >
+            <img src="{{ asset('storage/kode_plat_logo.png') }}">
         </a>
+    </div>
+</nav>
+<nav
+    class="navbar navbar-expand-md navbar-dark shadow-sm"
+    style="background-color: #3A3A3A; height: 35px;"
+>
+    <div class="container">
         <button
             class="navbar-toggler"
             type="button"
@@ -19,101 +26,101 @@
         </button>
 
         <div
-            class="collapse navbar-collapse"
+            class="collapse navbar-collapse navbar-main"
             id="navbarSupportedContent"
         >
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a
-                        class="nav-link font-weight-bold"
-                        href="{{ route('home') }}"
-                    >{{ __('mytranslation.home') }}</a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link font-weight-bold"
-                        href="{{ route('projects.index') }}"
-                    >{{ __('mytranslation.project') }}</a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link font-weight-bold"
-                        href="{{ route('about') }}"
-                    >{{ __('mytranslation.about') }}</a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link font-weight-bold"
-                        href="{{ route('service') }}"
-                    >{{ __('mytranslation.service') }}</a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link font-weight-bold"
-                        href="{{ route('contact') }}"
-                    >{{ __('mytranslation.contact') }}</a>
-                </li>
-
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                @else
-                    <li class="nav-item dropdown">
+            <div class="navbar-div-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-3">
                         <a
-                            id="navbarDropdown"
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            v-pre
-                        >
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
+                            class="nav-link white-navbar-text"
+                            href="{{ route('home') }}"
+                        >{{ __('mytranslation.home') }}</a>
+                    </li>
 
-                        <div
-                            class="dropdown-menu dropdown-menu-right"
-                            aria-labelledby="navbarDropdown"
-                        >
+                    <li class="nav-item mx-3">
+                        <a
+                            class="nav-link white-navbar-text"
+                            href="{{ route('projects.index') }}"
+                        >{{ __('mytranslation.project') }}</a>
+                    </li>
+
+                    <li class="nav-item mx-3">
+                        <a
+                            class="nav-link white-navbar-text"
+                            href="{{ route('about') }}"
+                        >{{ __('mytranslation.about') }}</a>
+                    </li>
+
+                    <li class="nav-item mx-3">
+                        <a
+                            class="nav-link white-navbar-text"
+                            href="{{ route('service') }}"
+                        >{{ __('mytranslation.service') }}</a>
+                    </li>
+
+                    <li class="nav-item mx-3">
+                        <a
+                            class="nav-link white-navbar-text"
+                            href="{{ route('contact') }}"
+                        >{{ __('mytranslation.contact') }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-div-right">
+                <ul class="navbar-nav">
+                    @guest
+                    @else
+                        <li class="nav-item dropdown">
                             <a
-                                class="dropdown-item"
-                                href="{{ action([\App\Http\Controllers\ProjectController::class, 'create']) }}"
+                                id="navbarDropdown"
+                                class="nav-link dropdown-toggle white-navbar-text"
+                                href="#"
+                                role="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                v-pre
                             >
-                                {{ __('mytranslation.create_project') }}
+                                {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
-                            <a
-                                class="dropdown-item"
-                                href="{{ route('logout') }}"
-                                onclick="
+                            <div
+                                class="dropdown-menu dropdown-menu-right"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <a
+                                    class="dropdown-item"
+                                    href="{{ action([\App\Http\Controllers\ProjectController::class, 'create']) }}"
+                                >
+                                    {{ __('mytranslation.create_project') }}
+                                </a>
+
+                                <a
+                                    class="dropdown-item"
+                                    href="{{ route('logout') }}"
+                                    onclick="
                                 event.preventDefault();
                                 document.getElementById('logout-form').submit();"
-                            >
-                                {{ __('mytranslation.logout') }}
-                            </a>
+                                >
+                                    {{ __('mytranslation.logout') }}
+                                </a>
 
 
-                            <form
-                                id="logout-form"
-                                action="{{ route('logout') }}"
-                                method="POST"
-                                style="display: none;"
-                            >
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
+                                <form
+                                    id="logout-form"
+                                    action="{{ route('logout') }}"
+                                    method="POST"
+                                    style="display: none;"
+                                >
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

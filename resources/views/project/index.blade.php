@@ -9,13 +9,13 @@
                         class="card h-100"
                         style="max-width: 24rem;"
                     >
-                        <div class="HoverDiv">
+                        <a href="/projects/{{$project->id}}" class="HoverDiv">
                             <img
                                 src="storage/{{ $images['image' . $project->id] }}"
                                 class="card-img-top"
                                 alt="..."
                             >
-                        </div>
+                        </a>
 
                         <div
                             class="card-body"
