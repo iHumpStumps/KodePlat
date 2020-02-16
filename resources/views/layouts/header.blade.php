@@ -1,11 +1,10 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="height: 95px;">
     <div class="container">
         <a
-            class="navbar-brand"
+            class="navbar-brand pt-4"
             href="{{ route('home') }}"
         >
-{{--            {{ __('mytranslation.kodeplat') }}--}}
-            <img src="{{ asset('storage/o5X75FcPKNleaNEtFZX4Dc5jm7r3bPF6rVIV2OOB.jpeg') }}" >
+            <img src="{{ asset('storage/kode_plat_logo.png') }}" >
         </a>
         <button
             class="navbar-toggler"
