@@ -2,7 +2,7 @@
 
 return [
     'project' => 'PROJEKT',
-    'kodeplat' => 'Kode Plåt',
+    'kodeplat' => 'Kode Plåt AB',
     'register' => 'Registrera dig',
     'login' => 'Logga in',
     'logout' => 'Logga ut',
@@ -30,6 +30,11 @@ return [
     'service_information5' => 'Vi erbjuder avtal där vi ser över Ert tak vår och höst, rensar rännor och lämnar ett protokoll över konditionen på taket med kostnadsförslag på ev. åtgärder (ett bra redskap åt förvaltare i budgetarbetet).',
     'service_information6' => 'Är du intresserad av avtal, kontakta Bengt-Åke Bengtsson telefon 0739-60 96 61. Kvalitetssäkring enligt PLR. Samtliga medarbetare har utbildning i heta arbeten.',
 
+    'badminton_information1' => 'Tove Lind',
+    'badminton_information2' => 'Skälderviken Badminton',
 
+    'address' => 'Bilgatan 9B | 442 40 Kungälv | Sverige',
+    'nummer' => '+46 303 948 36',
+    'email' => 'info@kodeplat.se',
 
     ];
