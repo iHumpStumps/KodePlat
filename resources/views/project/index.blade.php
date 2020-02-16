@@ -7,12 +7,12 @@
             class="card"
             style="width: 18rem;"
         >
-                        <img
-                            src="storage/{{$project->filepath}}"
-                            class="card-img-top"
-                            alt="..."
-                        >
-            <div class="card-body" style="text-align: center">
+            <img
+                src="storage/{{ $images['image' . $project->id] }}"
+                class="card-img-top"
+                alt="..."
+            >
+            <div class="card-body">
                 <h5 class="card-title">{{ $project->title }}</h5>
                 <p class="card-text">{{ $project->information }}</p>
                 <a
