@@ -25,6 +25,48 @@
         href="https://fonts.googleapis.com/css?family=Nunito"
         rel="stylesheet"
     >
+    <style>
+        .HoverDiv {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .HoverDiv h1, .HoverDiv img {
+            max-width: 100%;
+            text-align:center;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .HoverDiv:hover h1, .HoverDiv:hover img {
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        img {
+            display:inline-block;
+            position:relative;
+            z-index:1;
+        }
+
+        img:before {
+            content:'';
+            width:100%; height:100%;
+            position:absolute;
+            top:-1px; left:0;
+            background:red;
+            z-index:-1;
+            border: 1px solid #ccc;
+            -webkit-transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+            -webkit-transform-origin:0 0;
+            -ms-transform-origin:0 0;
+            transform-origin:0 0;
+        }
+    </style>
 
 </head>
 

@@ -45,7 +45,6 @@ class ProjectController extends Controller
         $projectAttributes = [
             'title' => $request->get('title'),
             'information' => $request->get('information'),
-            'metal' => $request->get('metal'),
             'buyer' => $request->get('buyer'),
             'address' => $request->get('address'),
             'year' => $request->get('year'),

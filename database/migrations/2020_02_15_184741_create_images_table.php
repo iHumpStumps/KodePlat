@@ -20,7 +20,9 @@ class CreateImagesTable extends Migration
             $table->timestamps();
 
             $table->foreign('project_id')
-                ->references('id')->on('projects')
+                ->references('id')
+                ->on('projects')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
     }
