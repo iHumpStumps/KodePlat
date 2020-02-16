@@ -11,7 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(UsersTableSeeder::class);
-         $this->call(ProjectsTableSeeder::class);
+        $faker = Faker\Factory::create();
+        $image = $faker->image('public/storage/', '1280', '720', 'city', false);
+        dd($image);
+//        $this->call(UsersTableSeeder::class);
+//        $this->call(ProjectsTableSeeder::class);
     }
 }

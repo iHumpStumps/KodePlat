@@ -66,6 +66,30 @@
             -ms-transform-origin:0 0;
             transform-origin:0 0;
         }
+
+        .navbar-main {
+            text-align: center;
+            height: 50px;
+            position: relative;
+        }
+        .navbar-div-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .navbar-div-right {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            z-index: 999;
+            transform: translate(0, -50%);
+        }
+
+        .nav-item a:hover {
+            color: #0071B8 !important;
+            cursor: pointer;
+        }
     </style>
 
 </head>

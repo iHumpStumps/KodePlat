@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Image;
 use App\Models\Project;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
@@ -15,6 +16,8 @@ class ProjectsTableSeeder extends Seeder
     {
         factory(Project::class, 5)
             ->create()
-            ->each;
+            ->each(function ($project) {
+                $project->images()->save(factory(Image::class)->make());
+            });
     }
 }
