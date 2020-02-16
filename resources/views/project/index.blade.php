@@ -12,7 +12,7 @@
                 class="card-img-top"
                 alt="..."
             >
-            <div class="card-body">
+            <div class="card-body" style="text-align: center">
                 <h5 class="card-title">{{ $project->title }}</h5>
                 <p class="card-text">{{ $project->information }}</p>
                 <a
