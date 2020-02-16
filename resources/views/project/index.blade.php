@@ -4,11 +4,12 @@
     <div class="card-deck row-cols-1 row-cols-md-3">
         @foreach($projects as $project)
             <div class="col mb-3">
+                <a href="/" class="">
                     <div
                         class="card h-100"
                         style="max-width: 24rem;"
                     >
-                        <a href="/" class="HoverDiv">
+                        <a href="/projects/{{$project->id}}" class="HoverDiv">
                             <img
                                 src="storage/{{ $images['image' . $project->id] }}"
                                 class="card-img-top"
@@ -35,6 +36,7 @@
                             </div>
                         </div>
                     </div>
+                </a>
             </div>
         @endforeach
     </div>

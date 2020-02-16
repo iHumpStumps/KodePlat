@@ -72,22 +72,29 @@
             height: 50px;
             position: relative;
         }
+
         .navbar-div-center {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
         .navbar-div-right {
             position: absolute;
-            right: 0;
             top: 50%;
+            right: 0;
             z-index: 999;
             transform: translate(0, -50%);
         }
 
+        .white-navbar-text {
+            color: #FFFFFF !important;
+        }
+
         .nav-item a:hover {
-            color: #0071B8 !important;
+            /*color: #0071B8 !important;*/
+            font-weight: bold;
             cursor: pointer;
         }
     </style>

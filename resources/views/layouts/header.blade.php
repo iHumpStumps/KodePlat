@@ -1,14 +1,18 @@
+<nav class="navbar navbar-light">
+    <div class="container">
+        <a
+            class="navbar-brand pt-2"
+            href="{{ route('home') }}"
+        >
+            <img src="{{ asset('storage/kode_plat_logo.png') }}">
+        </a>
+    </div>
+</nav>
 <nav
-    class="navbar navbar-expand-md navbar-light bg-white shadow-sm"
-    style="height: 95px;"
+    class="navbar navbar-expand-md navbar-dark shadow-sm"
+    style="background-color: #3A3A3A; height: 35px;"
 >
     <div class="container">
-{{--                <a--}}
-{{--                    class="navbar-brand pt-4"--}}
-{{--                    href="{{ route('home') }}"--}}
-{{--                >--}}
-{{--                    <img src="{{ asset('storage/kode_plat_logo.png') }}" >--}}
-{{--                </a>--}}
         <button
             class="navbar-toggler"
             type="button"
@@ -28,56 +32,50 @@
             <!-- Left Side Of Navbar -->
             <div class="navbar-div-center">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a
-                            class="nav-link font-weight-bold"
+                            class="nav-link white-navbar-text"
                             href="{{ route('home') }}"
                         >{{ __('mytranslation.home') }}</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a
-                            class="nav-link font-weight-bold"
+                            class="nav-link white-navbar-text"
                             href="{{ route('projects.index') }}"
                         >{{ __('mytranslation.project') }}</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a
-                            class="nav-link font-weight-bold"
+                            class="nav-link white-navbar-text"
                             href="{{ route('about') }}"
                         >{{ __('mytranslation.about') }}</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a
-                            class="nav-link font-weight-bold"
+                            class="nav-link white-navbar-text"
                             href="{{ route('service') }}"
                         >{{ __('mytranslation.service') }}</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item mx-3">
                         <a
-                            class="nav-link font-weight-bold"
+                            class="nav-link white-navbar-text"
                             href="{{ route('contact') }}"
                         >{{ __('mytranslation.contact') }}</a>
                     </li>
-
                 </ul>
             </div>
-
-            <!-- Right Side Of Navbar -->
-            <div
-                class="navbar-div-right"
-            >
+            <div class="navbar-div-right">
                 <ul class="navbar-nav">
-                    <!-- Authentication Links -->
                     @guest
                     @else
                         <li class="nav-item dropdown">
                             <a
                                 id="navbarDropdown"
-                                class="nav-link dropdown-toggle"
+                                class="nav-link dropdown-toggle white-navbar-text"
                                 href="#"
                                 role="button"
                                 data-toggle="dropdown"
@@ -103,8 +101,8 @@
                                     class="dropdown-item"
                                     href="{{ route('logout') }}"
                                     onclick="
-                                            event.preventDefault();
-                                            document.getElementById('logout-form').submit();"
+                                event.preventDefault();
+                                document.getElementById('logout-form').submit();"
                                 >
                                     {{ __('mytranslation.logout') }}
                                 </a>
