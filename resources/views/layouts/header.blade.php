@@ -8,14 +8,14 @@
                         class="active">
                         <a
                             href="{{ action([\App\Http\Controllers\HomeController::class, 'index']) }}"
-                            class="active">HEM</a></li>
+                            class="active">
+                            HEM
+                        </a>
+                    </li>
                     <li><a>PROJEKT</a></li>
                     <li><a>OM OSS</a></li>
                     <li><a>SERVICE</a></li>
                     <li><a>KONTAKT</a></li>
-                    <form action="/logout" method="post">
-                        <li><input type="submit" value="LOGOUT" /></li>
-                    </form>
 
                 </ul>
                 <div class="tab-highlighter"></div>

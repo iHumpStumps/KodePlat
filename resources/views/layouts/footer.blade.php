@@ -3,21 +3,21 @@
     style="background-color: #0071B8"
 >
     <div class="container-xl  d-flex justify-content-center align-items-center"
-    style="transform: translateX(-15px)">
-{{--        <div--}}
-{{--            class="my-2"--}}
-{{--        >--}}
-{{--            <a--}}
-{{--                href="https://www.sbmk.se/"--}}
-{{--                target="_blank"--}}
-{{--                class="text-light"--}}
-{{--            >--}}
-{{--                <img--}}
-{{--                    src="{{ asset('storage/badminton.png') }}"--}}
-{{--                    alt="Skälderviken Badminton"--}}
-{{--                />--}}
-{{--            </a>--}}
-{{--        </div>--}}
+         style="transform: translateX(-15px)">
+        {{--        <div--}}
+        {{--            class="my-2"--}}
+        {{--        >--}}
+        {{--            <a--}}
+        {{--                href="https://www.sbmk.se/"--}}
+        {{--                target="_blank"--}}
+        {{--                class="text-light"--}}
+        {{--            >--}}
+        {{--                <img--}}
+        {{--                    src="{{ asset('storage/badminton.png') }}"--}}
+        {{--                    alt="Skälderviken Badminton"--}}
+        {{--                />--}}
+        {{--            </a>--}}
+        {{--        </div>--}}
         <div class="my-2">
             <a
                 href="https://www.barncancerfonden.se/"
@@ -30,16 +30,16 @@
                 >
             </a>
         </div>
-{{--        <div class="my-2">--}}
-{{--            <a--}}
-{{--                href="https://www.laget.se/KIS_BANDY_DAMER"--}}
-{{--                target="_blank"--}}
-{{--                class="text-light"--}}
-{{--            ><img--}}
-{{--                    src="{{ asset('storage/kareby_is_slas.png') }}"--}}
-{{--                    alt="Kareby IS damlag"--}}
-{{--                /></a>--}}
-{{--        </div>--}}
+        {{--        <div class="my-2">--}}
+        {{--            <a--}}
+        {{--                href="https://www.laget.se/KIS_BANDY_DAMER"--}}
+        {{--                target="_blank"--}}
+        {{--                class="text-light"--}}
+        {{--            ><img--}}
+        {{--                    src="{{ asset('storage/kareby_is_slas.png') }}"--}}
+        {{--                    alt="Kareby IS damlag"--}}
+        {{--                /></a>--}}
+        {{--        </div>--}}
     </div>
 </div>
 <div
@@ -95,6 +95,14 @@
                     href="/register"
                     class="text-white"
                 >{{ __('mytranslation.register') }}</a><br>
+            @else
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             @endguest
         </div>
         <div class="col-1 my-1">
