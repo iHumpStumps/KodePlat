@@ -1,0 +1,164 @@
+#body {
+    margin: 0;
+    padding-top: 100px;
+    background-color: #ebeded;
+}
+.navbar,
+#main {
+    position: relative;
+}
+.navbar.navbar-default {
+    z-index: 150;
+    margin-bottom: -50px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    background-color: #2e2e2e;
+}
+#main {
+    background-color: #ebeded;
+    padding-top:100px;
+}
+
+/*Image highlighting on /projects*/
+.HoverDiv {
+    position: relative;
+    overflow: hidden;
+}
+
+.HoverDiv h1, .HoverDiv img {
+    max-width: 100%;
+    text-align:center;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.HoverDiv:hover h1, .HoverDiv:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+img {
+    display:inline-block;
+    position:relative;
+    z-index:1;
+}
+
+/*Styling links*/
+navbar .tabs .navbar-body li a{
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    padding: 10px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:pointer;
+    margin: 4px;
+    color: white;
+}
+navbar .tabs .navbar-body a:hover, nav a:active, nav a{
+    text-decoration: none;
+    color: #0071B8;
+}
+navbar .tabs .navbar-body a{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+/*Setting Up Navbar Layouts*/
+navbar .container-fluid{
+    position: absolute;
+    top:0; bottom: 0;
+    right:0;
+    left:0;
+}
+navbar .navbar-body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+navbar div.navbar-end{
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+}
+navbar div.navbar-start,
+navbar div.navbar-end{
+    flex: 1;
+    -webkit-flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+}
+navbar div.navbar-start .logo{
+    opacity: 0.6;
+    width:30px;
+}
+
+/*Styling Tabs*/
+navbar .tabs .navbar-body li.active a{
+    color: white;
+}
+navbar .tabs .navbar-body li{
+    -webkit-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
+    -moz-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
+    -ms-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
+    -o-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
+    transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
+}
+navbar .tabs .navbar-body li:hover{
+    background: rgba(0,0,0,0.02);
+}
+navbar .tabs .navbar-body li:active{
+    background: rgba(0,0,0,0.05);
+}
+navbar .tabs .navbar-body li a:hover, .tabs .navbar-body li a:active{
+    background: rgba(0,0,0,0);
+    color: #0071B8;
+}
+
+/*Styling Tab Highlighter*/
+navbar .tab-highlighter{
+    height:2px;
+    width: 50px;
+    margin-top: -15px;
+    background: red;
+    position: absolute;
+    -webkit-transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
+    -moz-transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
+    -ms-transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
+    -o-transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
+    transition: all 0.6s cubic-bezier(0.21, 0.61, 0.36, 1);
+}
+
+/*Keyframes*/
+@keyframes SwiftSlide {
+    100%{
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+@keyframes SwiftSlideToRight {
+    100%{
+        opacity:0;
+        margin-right: -30px;
+    }
+}

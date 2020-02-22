@@ -15,8 +15,9 @@ class ProjectsTableSeeder extends Seeder
     {
         factory(Project::class, 5)
             ->create()
-            ->each(function ($project) {
-                $project->images()->save(factory(Image::class)->make());
-            });
+//            ->each(function ($project) {
+//                $project->images()->save(factory(Image::class)->make());
+//            })
+        ;
     }
 }

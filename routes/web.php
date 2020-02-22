@@ -11,11 +11,10 @@
 |
 */
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about');
