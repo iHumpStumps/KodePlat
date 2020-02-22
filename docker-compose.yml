@@ -3,12 +3,7 @@ version: '3.3'
 services:
   mariadb:
     image: mariadb:bionic
-    deploy:
-      restart_policy:
-        condition: any
-        delay: 5s
-        max_attempts: 2
-        window: 30s
+    restart: always
     ports:
       - 3306:3306
     environment:
