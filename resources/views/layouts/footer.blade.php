@@ -2,22 +2,32 @@
     class="w-100 text-light"
     style="background-color: #0071B8"
 >
-    <div class="container-xl  d-flex justify-content-center align-items-center"
-         style="transform: translateX(-15px)">
-        {{--        <div--}}
-        {{--            class="my-2"--}}
-        {{--        >--}}
-        {{--            <a--}}
-        {{--                href="https://www.sbmk.se/"--}}
-        {{--                target="_blank"--}}
-        {{--                class="text-light"--}}
-        {{--            >--}}
-        {{--                <img--}}
-        {{--                    src="{{ asset('storage/badminton.png') }}"--}}
-        {{--                    alt="Skälderviken Badminton"--}}
-        {{--                />--}}
-        {{--            </a>--}}
-        {{--        </div>--}}
+    <div
+        class="container-xl  d-flex justify-content-center align-items-center"
+        style="transform: translateX(-15px)"
+    >
+        <div
+            class="my-2 d-inline-block"
+        >
+            <a
+                href="https://www.sbmk.se/"
+                target="_blank"
+                class="text-light"
+            >
+                <img
+                    src="{{ asset('storage/badminton.png') }}"
+                    alt="Skälderviken Badminton"
+                    height="80"
+                />
+            </a>
+
+        </div>
+        <div>
+            <p>
+                Tove Lind<br>
+                Skälderviken Badminton
+            </p>
+        </div>
         <div class="my-2">
             <a
                 href="https://www.barncancerfonden.se/"
@@ -25,21 +35,23 @@
                 class="text-light"
             >
                 <img
-                    src="{{ asset('storage/barncancer_fonden.png') }} "
+                    src="{{ asset('storage/barncancerfonden-logo.png') }} "
                     alt="Barncancer Fonden"
+                    height="80"
                 >
             </a>
         </div>
-        {{--        <div class="my-2">--}}
-        {{--            <a--}}
-        {{--                href="https://www.laget.se/KIS_BANDY_DAMER"--}}
-        {{--                target="_blank"--}}
-        {{--                class="text-light"--}}
-        {{--            ><img--}}
-        {{--                    src="{{ asset('storage/kareby_is_slas.png') }}"--}}
-        {{--                    alt="Kareby IS damlag"--}}
-        {{--                /></a>--}}
-        {{--        </div>--}}
+        <div class="my-2">
+            <a
+                href="https://www.laget.se/KIS_BANDY_DAMER"
+                target="_blank"
+                class="text-light"
+            ><img
+                    src="{{ asset('storage/kareby_is_slas.png') }}"
+                    alt="Kareby IS damlag"
+                    height="80"
+                /></a>
+        </div>
     </div>
 </div>
 <div
