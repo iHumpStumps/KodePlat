@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use App\Models\Project;
 use App\Http\Requests\ProjectRequest;
+use function array_merge;
 
 class ProjectController extends Controller
 {
@@ -20,9 +21,11 @@ class ProjectController extends Controller
 
     public function index()
     {
-        $images = [];
+        $images = []; //Image::all();
         $projects = Project::all();
-        foreach ($projects as $project){
+
+        foreach ($projects as $project) {
+
             $images = array_merge($images, ['image' . $project->id => $project->images->firstWhere('project_id', $project->id)->filepath]);
         }
         return view('project.index', ['projects' => $projects, 'images' => $images]);
@@ -40,7 +43,7 @@ class ProjectController extends Controller
 
     public function update(ProjectRequest $request, Project $project)
     {
-        $filePath = $request->file('filename')->store('public');
+        $filePath = $request->file('filename')->storeAs('public/project_images', $project->id);
 
         $projectAttributes = [
             'title' => $request->get('title'),
@@ -49,8 +52,8 @@ class ProjectController extends Controller
             'address' => $request->get('address'),
             'year' => $request->get('year'),
         ];
-
-        $project->fill($projectAttributes)->save();
+        dd($project);
+        $project = $project->fill($projectAttributes)->save();
 
         $fixedFilePath = explode('/', $filePath);
 

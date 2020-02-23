@@ -12,10 +12,34 @@
                             HEM
                         </a>
                     </li>
-                    <li><a>PROJEKT</a></li>
-                    <li><a>OM OSS</a></li>
-                    <li><a>SERVICE</a></li>
-                    <li><a>KONTAKT</a></li>
+                    <li>
+                        <a
+                            href="{{ action([\App\Http\Controllers\ProjectController::class, 'index']) }}"
+                        >
+                            PROJEKT
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="{{ action([\App\Http\Controllers\HomeController::class, 'about']) }}"
+                        >
+                            OM OSS
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="{{ action([\App\Http\Controllers\HomeController::class, 'service']) }}"
+                        >
+                            SERVICE
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="{{ action([\App\Http\Controllers\HomeController::class, 'contact']) }}"
+                        >
+                            KONTAKT
+                        </a>
+                    </li>
 
                 </ul>
                 <div class="tab-highlighter"></div>
