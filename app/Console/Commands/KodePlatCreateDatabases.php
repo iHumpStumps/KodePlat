@@ -12,6 +12,7 @@ class KodePlatCreateDatabases extends Command
 
     public function handle(): void
     {
+        $startTime = now();
         $this->info("\nChecking current environment...");
 
         $this->createSchema('kodeplat', false);
@@ -31,66 +32,55 @@ class KodePlatCreateDatabases extends Command
             file_put_contents($path,
                 str_replace('DB_DATABASE=' . getenv('DB_DATABASE'),
                     'DB_DATABASE=testing', file_get_contents($path)));
+            $this->info("\nFile " . $path . ' created.');
         }
 
         $this->createSchema('testing', true);
+
+        $this->info("\nWhole operation finished in "
+            . $startTime->diffInRealSeconds() . ' sec.');
     }
 
     private function createSchema(String $schemaName, bool $overwrite): void
     {
-        $this->info("\nChecking if $schemaName exists...");
-        $query = "SELECT COUNT(*) FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = $schemaName";
-        $db = DB::select($query);
-        if (empty($db)) {
-            $this->info("\nDatabase " . $schemaName . ' does not exist, creating new.');
-            $charset = config('database.connections.mysql.charset', 'utf8mb4');
-            $collation = config('database.connections.mysql.collation', 'utf8mb4_unicode_ci');
 
-            $query = "CREATE DATABASE IF NOT EXISTS $schemaName CHARACTER SET $charset COLLATE $collation;";
+        $this->info("\nCreating new database " . $schemaName . '.');
 
-            DB::statement($query);
+        $charset = config('database.connections.mysql.charset', 'utf8mb4');
+        $collation = config('database.connections.mysql.collation', 'utf8mb4_unicode_ci');
 
-            $this->info("\nDatabase " . $schemaName . ' has been created.');
+        $query = "CREATE DATABASE IF NOT EXISTS $schemaName CHARACTER SET $charset COLLATE $collation;";
 
-            $this->migrate($schemaName);
+        DB::statement($query);
 
-            if ($schemaName !== 'testing'){
-                $this->seed($schemaName);
-            }
-        } else {
-            $this->info("\nDatabase " . $schemaName . ' already exists, skipping operation.');
+        $this->info("\nDatabase " . $schemaName . ' has been created.');
 
-            if ($overwrite) {
-                $this->migrate($schemaName);
+        $this->migrate($schemaName);
 
-                if ($schemaName !== 'testing'){
-                    $this->seed($schemaName);
-                }
-            }
+        if ($schemaName !== 'testing') {
+            $this->seed($schemaName);
         }
     }
 
     private function migrate(String $schemaName): void
     {
-        $oldEnv = getenv('DB_DATABASE');
-        putenv("DB_DATABASE=$schemaName");
-
         $startMigration = now();
 
         $this->info("\nStarting database migrations...");
-        $this->call('migrate:fresh');
+
+        if ($schemaName === 'testing') {
+            $this->call('migrate:fresh', ['--database' => 'mysql2']);
+            DB::setDefaultConnection('mysql');
+        } else {
+            $this->call('migrate:fresh');
+        }
 
         $this->info("\nMigrations completed in "
             . $startMigration->diffInRealSeconds() . ' sec.');
-
-        putenv("DB_DATABASE=$oldEnv");
     }
 
     private function seed(String $schemaName): void
     {
-        $oldEnv = getenv('DB_DATABASE');
-        putenv("DB_DATABASE=$schemaName");
-
         $startSeeding = now();
 
         $this->info("\nSeeding database tables with data...");
@@ -99,7 +89,5 @@ class KodePlatCreateDatabases extends Command
         $this->info("\nSeeding completed in "
             . $startSeeding->diffInRealSeconds()
             . ' sec.');
-
-        putenv("DB_DATABASE=$oldEnv");
     }
 }
